@@ -1,0 +1,126 @@
+<html>
+<head>
+  <title>Te amo amor</title>
+  <meta name="description" content="Una página web dedicada a mi amor">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+    
+    <button id="music-btn">🎵 Reproducir Música</button>
+    
+    <div class="container">
+        <h2>💖 Para una Persona Especial 💖</h2>
+        <p class="message">Feliz San Valentín, esto es para ti con mucho cariño. ❤️</p>
+        
+        <div class="photo-gallery">
+            <img src="https://i.pinimg.com/originals/96/e8/d2/96e8d21a6465dd40655c340d14a3a766.jpg" class="photo" alt="Foto 1">
+            <img src="https://i.pinimg.com/736x/e9/a7/99/e9a79938f9da77a1af320d25eb868bf4.jpg" class="photo" alt="Foto 2">
+            <img src="https://i.pinimg.com/736x/9e/47/98/9e4798b52eb0d11932382c46b8cd2025.jpg" class="photo" alt="Foto 3">
+        </div>
+        
+        <div class="card-container">
+            <div class="card" onclick="showNote(this)">Carta 1<div class="note">Eres lo mejor que me ha pasado ❤️</div></div>
+            <div class="card" onclick="showNote(this)">Carta 2<div class="note">Cada día contigo es un regalo 💕</div></div>
+            <div class="card" onclick="showNote(this)">Carta 3<div class="note">Te quiero con todo mi corazón 😘</div></div>
+        </div>
+        
+        <div class="links">
+            <h2>🐱 Enlaces de Gatitos 🐱</h2>
+            <a href="https://www.pexels.com/search/cat/" target="_blank">Fotos de gatitos</a>
+            <a href="https://www.youtube.com/results?search_query=cute+cats" target="_blank">Videos de gatitos</a>
+        </div>
+    </div>
+    
+    <script>
+        function showNote(card) {
+    let note = card.querySelector('.note');
+    if (note.style.display === 'none' || note.style.display === '') {
+        note.style.display = 'flex';
+    } else {
+        note.style.display = 'none';
+    }
+}
+
+        document.getElementById('music-btn').addEventListener('click', () => {
+            let music = document.getElementById('music');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        });
+
+        // Animaciones individuales para las fotos
+    gsap.from('.photo', {
+        opacity: 0,
+        scale: 0.5,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "elastic.out(1, 0.5)"
+    });
+
+    gsap.to('.photo:nth-child(odd)', { 
+        y: -15, 
+        rotate: 5, 
+        repeat: -1, 
+        yoyo: true, 
+        duration: 1.2, 
+        ease: "power1.inOut" 
+    });
+
+    gsap.to('.photo:nth-child(even)', { 
+        y: 10, 
+        rotate: -5, 
+        repeat: -1, 
+        yoyo: true, 
+        duration: 1.2, 
+        ease: "power1.inOut" 
+    });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            $("#flipbook").turn({
+                width: 400,
+                height: 300,
+                autoCenter: true
+            });
+        });
+        
+    </script>  
+  <div class="overlay">
+    <div class="container">
+      <header>
+        <span class="icon">
+          <span class="icon2"></span>
+          <span class="title">Click Me</span>
+        </span>
+      </header>
+      <main>
+        <div class="text">
+          <span class="close" title="Close"><i class="fa fa-times"></i></span>
+            <h1>Te Amo Mucho
+            <br>
+            Feliz 14 de Febrero
+            </h1>
+          <h2>-</h2>
+          <h3>De AnderCode</h3>
+        </div>
+      </main>
+      <br>
+      <br>
+      <br>
+      <footer>
+        <audio controls loop>
+            <source src="music.mp3" type="audio/mp3">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+      </footer>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
