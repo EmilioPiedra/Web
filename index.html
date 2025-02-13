@@ -20,8 +20,12 @@
                     </div>
                 </div>
             </div>
-        </div>               
-    <div class="card-container">
+        </div>
+            <div class="hearts-container"></div>               
+    <div class="card-container">  
+        <div class="instruction-container">
+            <p class="instruction-text"> Toca cada foto hay un mensaje especial para ti.</p>
+        </div>
       <audio controls loop>
         <source src="Musica/Danny Ocean - Volare (Official Music Video).mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
@@ -100,7 +104,15 @@
                 });
             });
         });
-        
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.querySelector(".hearts-container").appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 500);
     </script>  
   <div class="overlay">
     <div class="container">
