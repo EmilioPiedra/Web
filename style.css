@@ -4,7 +4,6 @@
 
 :root {
     --font-color: #000000;
-    --font-family: 'Amatic SC', cursive;
     --icon-size: 20em;
     --icon-color: #ff0000;
     --title-size: 70px;
@@ -280,6 +279,7 @@ body {
 }
 
 .card {
+    font-family: 'Dancing Script', cursive;
     width: 250px;
     height: 350px;
     background: white;
@@ -334,72 +334,19 @@ body {
 }
 
 .card .note.color1 { background-color: #Fff1f1; }  
-.card .note.color2 { background-color: #FBCFE5; }  
-.card .note.color3 { background-color: #EE71AB; }  
-.card .note.color4 { background-color: #FF4F84; }  
-.card .note.color5 { background-color: #E9A7BB; }  
+.card .note.color2 { background-color: #Fff1f1; }  
+.card .note.color3 { background-color: #Fff1f1; }  
+.card .note.color4 { background-color: #Fff1f1; }  
+.card .note.color5 { background-color: #Fff1f1; }  
 .card .note.color6 { background-color: #CD003E; }  
-.valentine-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
-.container {
-    position: relative;
-    margin-top: 50px;
-}
+.text-container {
+    text-decoration: 2px solid underline red;
+    text-underline-position: under;
+    text-underline-offset: 10px;
+    font-family: 'Dancing Script', cursive;
 
-.valentine-card {
-    position: relative;
-    width: 350px;
-    height: 225px;
-    border: 10px solid rgb(255, 255, 255);
-    box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
-    background-color: rgb(255, 222, 227);
-    text-align: center;
-    cursor: pointer;
-}
-
-.valentine-text-container {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-}
-
-.valentine-text-container .valentine-header {
-    font-size: 1.5rem;
-    margin: 60px auto;
-}
-
-.valentine-card p {
-    font-size: 1.1rem;
-    line-height: 1.4;
-    color: #331717;
-    font-style: italic;
-    text-align: center;
-    margin: 30px auto;
-}
-
-.valentine-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 10px solid rgb(238, 77, 104);
-    backface-visibility: hidden;
-    background-color: white;
-    background-size: contain;
-    transform-style: preserve-3d;
-    transform-origin: 50% 0%;
-    transform: perspective(800px) rotateX(0deg);
-    transition: all 0.8s ease-in-out;
-}
-
-.valentine-card:hover .valentine-front {
-    transform: perspective(800px) rotateX(170deg);
-}
-
+  }
 .hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
         .heart {
             position: absolute;
